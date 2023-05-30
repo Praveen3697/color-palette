@@ -1,7 +1,92 @@
-{{page-title "ColorPalette"}}
+<h1>Color Palette</h1>
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<div class="form-container">
 
-{{outlet}}
+    <div class="form" >
+            <form {{on "submit" this.onSubmit}}>
+                <label for="value">Value<span id="asterik">*:</span></label>
+                <Input placeholder="Hex Code" required  @value={{this.value}} />
+                <br>
+                <br>
+                <label for="name">Name :</label>
+                <Input placeholder="Name" @value={{this.name}} />
+                <br>
+                <br>
+                <button type="submit">Add</button>
+            </form>
+    </div>
+
+    <div class="mode" >
+        <h3>Viewing Mode</h3>
+        <input type="radio" name="mode-type" id="hex" checked="checked" {{on "click" this.changeMode}}  >
+        <label for="hex">HEX</label>
+        <input type="radio" name="mode-type" id="rgb" {{on "click" this.changeViewMode}} >
+        <label for="rgb">RGB</label>
+    </div>
+  
+</div>
+
+<div class="palette-container">
+
+    <div class='{{if this.viewMode "outerBox2" "outerBox1"}}' >
+
+        {{#if this.isClicked}}
+
+        {{#each this.colors as |color index|}}
+            <div class="palette" style="background-color: {{color.value}}" >
+                
+                <p {{on 'click' (fn this.copyText color.value)}} class="hex-para">{{color.value}} </p>
+                
+                <button class="deleteButton" {{on "click" (fn this.deleteComponent index)}}>Delete</button>
+            </div>
+        {{/each}}
+
+        {{else}}
+
+        {{#each this.colors as |color index|}}
+            <div class="palette" style="background-color: {{color.value}}" >
+                
+                <p {{on 'click' (fn this.copyText color.value)}} class="hex-para"> {{color.value}} </p>
+                
+                <button class="deleteButton" {{on "click" (fn this.deleteComponent index)}}>Delete</button>
+            </div>
+        {{/each}}
+
+        {{/if}}
+
+    </div>
+
+    <div class='{{if this.viewMode "outerBox1" "outerBox2"}}' >
+
+        {{#if this.isClicked}}
+
+        {{#each this.rgb_colors as |color index|}}
+            <div class="palette" style="background-color: {{color.rgbValue}}" >
+                
+                <p {{on 'click' (fn this.copyText color.rgbValue)}} class="rgb-para">{{color.rgbValue}} </p>
+                
+                <button class="deleteButton" {{on "click" (fn this.deleteComponent index)}}>Delete</button>
+            </div>
+        {{/each}}
+
+        {{else}}
+
+        {{#each this.rgb_colors as |color index|}}
+            <div class="palette" style="background-color: {{color.rgbValue}}" >
+                
+                <p {{on 'click' (fn this.copyText color.rgbValue)}} class="rgb-para"> {{color.rgbValue}} </p>
+                
+                <button class="deleteButton" {{on "click" (fn this.deleteComponent index)}}>Delete</button>
+            </div>
+        {{/each}}
+
+        {{/if}}
+
+    </div>
+        
+</div>
+
+
+
+
+

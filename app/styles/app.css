@@ -1,0 +1,129 @@
+.form-container{
+
+    display: flex;
+    padding: 50px;
+    margin: 1rem;
+    /* justify-content: space-between; */
+    /* max-width: 100%; */
+
+    border-bottom: 2px solid black;
+}
+
+h1{
+    text-align: center;
+    color: red;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.outerBox1{
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 2px solid rgb(194, 173, 173); */
+    border-radius: 25px;
+}
+
+.palette{
+    /* padding: 10px; */
+    margin: 15px;
+    margin-top: 20px;
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 25px;
+    position: relative;
+
+}
+
+.palette:hover{
+    transform: scale(1.25);
+}
+
+.form{
+    margin-top: 20px;
+    padding: 20px;
+    height: 110px;
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 25px;
+    
+    /* position: fixed;
+    top: 50px;
+    right: 100px; */
+}
+
+Input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    width: 80px;
+  }
+  
+  Input:focus {
+    outline: none;
+  }
+
+  button{
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+    left: 35%;
+  }
+
+  .mode > input{
+    width: auto;
+  }
+
+  .mode{
+    position: relative;
+    left: 160px;  
+    margin-top: 50px;
+}
+
+.hex-para{
+    padding: 10px;
+    position: relative;
+    top: 35%;
+    left: 15%;
+    /* transform: translate(-50%,-50%); */
+    color: rgb(7, 6, 6);
+    font-weight: bolder;
+    font-size: medium;
+    width: 80px;
+    text-align: center;
+}
+.hex-para:hover{
+    background-color: rgb(222, 204, 204);
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.rgb-para{
+    padding: 5px 0;
+    position: relative;
+    top: 35%;
+    left: 2%;
+    /* transform: translate(-50%,-50%); */
+    color: rgb(7, 6, 6);
+    text-align: center;
+    font-weight: bolder;
+    width: 140px;
+    font-size: medium;
+}
+
+.rgb-para:hover{
+    background-color: rgb(222, 204, 204);
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+
+.deleteButton{
+    position: relative;
+    top: -50px;
+    left: 80px;
+}
+.outerBox2{
+    display: none;
+}
